@@ -1,4 +1,4 @@
-declare module "util" {
+declare module 'util' {
   interface dateInterval {
     year?: number;
     month?: number;
