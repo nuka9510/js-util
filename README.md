@@ -50,6 +50,7 @@ or
 or
 ```
 <script src="https://cdn.jsdelivr.net/npm/@nuka9510/js-util@<specific-version>/dist/index.min.js"> </script>
+```
 ### module
 #### npm
 ```
