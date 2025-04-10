@@ -87,11 +87,11 @@ or
 ```
 example
 ├── js
-│  └── index.js
+│  └── index.mjs
 └── view
    └── index.html
 ```
-* example/js/index.js
+* example/js/index.mjs
 ```
 import { JUtil } from "@nuka9510/js-util";
 
@@ -139,9 +139,9 @@ new Index();
 </body>
 <script type="importmap">
   {
-    "imports": { "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/index.js" }
+    "imports": { "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/index.mjs" }
   }
 </script>
-<script type="module" src="../js/index.js"></script>
+<script type="module" src="../js/index.mjs"></script>
 </html>
 ```
