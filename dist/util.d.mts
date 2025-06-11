@@ -30,7 +30,7 @@ export default class Util {
      */
     static isNumber(
     /** 확인할 값 */ arg: any, 
-    /** `true`일 경우 `arg`의 `type`도 확인 #default `false` */ strict?: boolean): boolean;
+    /** `true`일 경우 `arg`의 `type`도 확인 | #default `false` */ strict?: boolean): boolean;
     /**
      * 해당 값이 객체인지 확인
      *
@@ -67,10 +67,10 @@ export default class Util {
      * ```
      */
     static numberFormat(
-    /** 변환할 숫자 */ num: number, 
-    /** 소숫점 아래 자리 수 #default `0` */ decimals?: number, 
-    /** 소수점 구분자 #default `'.'` */ decimalSeparator?: string, 
-    /** 천 단위 구분자 #default `','` */ thousandsSeparator?: string): string;
+    /** 변환할 숫자 - `number` 타입이 아닌경우 `null` 반환 */ num: number, 
+    /** 소숫점 아래 자리 수 - `number` 타입이 아닌경우 `null` 반환 | #default `0` */ decimals?: number, 
+    /** 소수점 구분자 | #default `'.'` */ decimalSeparator?: string, 
+    /** 천 단위 구분자 | #default `','` */ thousandsSeparator?: string): string | null;
     /**
      * 주어진 포맷에 따라 `Date`객체를 문자열로 변환
      *
@@ -137,7 +137,7 @@ export default class Util {
      */
     static equaldate(
     /** 기준 날짜 */ date1: Date, 
-    /** 비교할 날짜 #default `new Date()` */ date2?: Date): boolean;
+    /** 비교할 날짜 | #default `new Date()` */ date2?: Date): boolean;
     /**
      * Date객체에서 해당 하는 요일을 반환한다.
      *
@@ -153,7 +153,7 @@ export default class Util {
      */
     static getWeek(
     /** 요일을 반환할 `Date` 객체 */ date: Date, 
-    /** 해당 요일의 약어반환 대한 구분 값 `false`일 경우 약어 반환 #default `true` */ flag?: boolean): string;
+    /** 해당 요일의 약어반환 대한 구분 값 `false`일 경우 약어 반환 | #default `true` */ flag?: boolean): string;
     /**
      * `Date`객체에 `interval`를 더한 값을 반환한다.
      *
@@ -236,7 +236,7 @@ export default class Util {
     static ratio(
     /** 비율 */ ratio: [number, number], 
     /** 기준 숫자 */ num: number, 
-    /** 비율 적용 기준 #default `true` */ flag?: boolean): number;
+    /** 비율 적용 기준 | #default `true` */ flag?: boolean): number;
     /**
      * `x` 번째의 항이 `a`이고 공차가 `d`인 등차수열의 `n` 번째 항을 반환 한다.
      */
@@ -259,7 +259,7 @@ export default class Util {
     static decimalAdjust(
     /** 구분 기준 `반올림(round)`, `내림(floor)`, `올림(ceil)` */ type: 'round' | 'floor' | 'ceil', 
     /** 기준 값 */ value: number, 
-    /** 소숫점 아래 자리 수 #default `0` */ exp?: number): number;
+    /** 소숫점 아래 자리 수 | #default `0` */ exp?: number): number;
     /**
      * html entity를 인코딩 한다.
      */

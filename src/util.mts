@@ -46,7 +46,7 @@ export default class Util {
    */
   static isNumber(
     /** 확인할 값 */ arg: any,
-    /** `true`일 경우 `arg`의 `type`도 확인 #default `false` */ strict: boolean = false
+    /** `true`일 경우 `arg`의 `type`도 확인 | #default `false` */ strict: boolean = false
   ): boolean {
     let result = !Number.isNaN(Number(arg)) &&
                   ['number', 'string'].includes(typeof arg) &&
@@ -98,11 +98,16 @@ export default class Util {
    * ```
    */
   static numberFormat(
-    /** 변환할 숫자 */ num: number,
-    /** 소숫점 아래 자리 수 #default `0` */ decimals: number = 0,
-    /** 소수점 구분자 #default `'.'` */ decimalSeparator: string = '.',
-    /** 천 단위 구분자 #default `','` */ thousandsSeparator: string = ','
-  ): string {
+    /** 변환할 숫자 - `number` 타입이 아닌경우 `null` 반환 */ num: number,
+    /** 소숫점 아래 자리 수 - `number` 타입이 아닌경우 `null` 반환 | #default `0` */ decimals: number = 0,
+    /** 소수점 구분자 | #default `'.'` */ decimalSeparator: string = '.',
+    /** 천 단위 구분자 | #default `','` */ thousandsSeparator: string = ','
+  ): string | null {
+    if (
+      !Util.isNumber(num, true) &&
+      !Util.isNumber(decimals, true)
+    ) { return null; }
+
     const result = String(num).split('.');
 
     result[0] = result[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousandsSeparator);
@@ -209,7 +214,7 @@ export default class Util {
    */
   static equaldate(
     /** 기준 날짜 */ date1: Date,
-    /** 비교할 날짜 #default `new Date()` */ date2: Date = new Date()
+    /** 비교할 날짜 | #default `new Date()` */ date2: Date = new Date()
   ): boolean { return Util.strftime(date1, '%Y-%m-%d') == Util.strftime(date2, '%Y-%m-%d'); }
 
   /**
@@ -227,7 +232,7 @@ export default class Util {
    */
   static getWeek(
     /** 요일을 반환할 `Date` 객체 */ date: Date,
-    /** 해당 요일의 약어반환 대한 구분 값 `false`일 경우 약어 반환 #default `true` */ flag: boolean = true
+    /** 해당 요일의 약어반환 대한 구분 값 `false`일 경우 약어 반환 | #default `true` */ flag: boolean = true
   ): string {
     const week = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],
     result = week[date.getDay()];
@@ -363,7 +368,7 @@ export default class Util {
   static ratio(
     /** 비율 */ ratio: [number, number],
     /** 기준 숫자 */ num: number,
-    /** 비율 적용 기준 #default `true` */ flag: boolean = true
+    /** 비율 적용 기준 | #default `true` */ flag: boolean = true
   ): number {
     const index = flag
                     ? [1, 0]
@@ -398,7 +403,7 @@ export default class Util {
   static decimalAdjust(
     /** 구분 기준 `반올림(round)`, `내림(floor)`, `올림(ceil)` */ type: 'round' | 'floor' | 'ceil',
     /** 기준 값 */ value: number,
-    /** 소숫점 아래 자리 수 #default `0` */ exp: number = 0
+    /** 소숫점 아래 자리 수 | #default `0` */ exp: number = 0
   ): number {
     const [ m, n = '0' ] = value.toString().split('e'),
     adjustValue = Math[type](Number(`${ m }e${ parseInt(n) + exp }`)),
