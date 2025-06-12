@@ -104,7 +104,7 @@ export default class Util {
     /** 천 단위 구분자 | #default `','` */ thousandsSeparator: string = ','
   ): string | null {
     if (
-      !Util.isNumber(num, true) &&
+      !Util.isNumber(num, true) ||
       !Util.isNumber(decimals, true)
     ) { return null; }
 
