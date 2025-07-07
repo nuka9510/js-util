@@ -412,4 +412,17 @@ export default class Util {
             .forEach((...arg) => { _arr.push(arr.slice(arg[0] * size, (arg[0] + 1) * size)); });
         return _arr;
     }
+    /**
+     * `value`를 `mapper`로 변환 한 값을 반환한다.
+     */
+    static get(
+    /** 변환 할 `value` */ value, 
+    /** 변환 시 사용할 `mapper` */ mapper) { return mapper(value); }
+    /**
+     * `value`를 `mapper`로 변환 한 값을 반환한다.
+     */
+    static getOrElse(
+    /** 변환 할 `value` */ value, 
+    /** 변환 한 값이 `null`일 경우 기본값 */ def, 
+    /** 변환 시 사용할 `mapper` */ mapper) { return mapper(value) ?? def; }
 }

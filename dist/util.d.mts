@@ -287,4 +287,17 @@ export default class Util {
     static arrayChunk<T>(
     /** 기준 배열 */ arr: T[], 
     /** `chunk`의 크기 (`size > 0`인 정수) */ size: number): T[][];
+    /**
+     * `value`를 `mapper`로 변환 한 값을 반환한다.
+     */
+    static get<T, R>(
+    /** 변환 할 `value` */ value: T, 
+    /** 변환 시 사용할 `mapper` */ mapper: (value: T) => R | null): R | null;
+    /**
+     * `value`를 `mapper`로 변환 한 값을 반환한다.
+     */
+    static getOrElse<T, R>(
+    /** 변환 할 `value` */ value: T, 
+    /** 변환 한 값이 `null`일 경우 기본값 */ def: R | null, 
+    /** 변환 시 사용할 `mapper` */ mapper: (value: T) => R | null): R | null;
 }
