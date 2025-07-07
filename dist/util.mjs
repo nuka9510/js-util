@@ -424,5 +424,5 @@ export default class Util {
     static getOrElse(
     /** 변환 할 `value` */ value, 
     /** 변환 한 값이 `null`일 경우 기본값 */ def, 
-    /** 변환 시 사용할 `mapper` */ mapper) { return mapper(value) ?? def; }
+    /** 변환 시 사용할 `mapper` */ mapper = (value) => value) { return mapper(value) ?? def; }
 }

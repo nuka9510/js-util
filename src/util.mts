@@ -509,8 +509,8 @@ export default class Util {
    */
   static getOrElse<T, R>(
     /** 변환 할 `value` */ value: T,
-    /** 변환 한 값이 `null`일 경우 기본값 */ def: R | null,
-    /** 변환 시 사용할 `mapper` */ mapper: (value: T) => R | null
-  ): R | null { return mapper(value) ?? def; }
+    /** 변환 한 값이 `null`일 경우 기본값 */ def: T | R | null,
+    /** 변환 시 사용할 `mapper` */ mapper: (value: T) => T | R | null = (value: T) => value
+  ): T | R | null { return mapper(value) ?? def; }
 
 }
