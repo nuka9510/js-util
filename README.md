@@ -32,48 +32,60 @@
 
 [top-language]: https://img.shields.io/github/languages/top/nuka9510/js-util
 
-## Usage
-### js (> 1.1.2)
-```
-<script src="https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/index.min.js"> </script>
-  OR
-<script src="https://cdn.jsdelivr.net/npm/@nuka9510/js-util@latest/dist/index.min.js"> </script>
-  OR
-<script src="https://cdn.jsdelivr.net/npm/@nuka9510/js-util@<specific-version>/dist/index.min.js"> </script>
-```
-```
-<script type="text/javascript">
-  const foo = "";
-
-  console.debug(jsUtil.Util.empty(foo));
-</script>
-```
-### mjs
+## Install
 ```
 npm i @nuka9510/js-util
 ```
 ```
+<script src="https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/js/index.min.js"> </script>
+```
+```
+<script src="https://cdn.jsdelivr.net/npm/@nuka9510/js-util@latest/dist/js/index.min.js"> </script>
+```
+```
+<script src="https://cdn.jsdelivr.net/npm/@nuka9510/js-util@<specific-version>/dist/js/index.min.js"> </script>
+```
+```
 <script type="importmap">
   {
-    "imports": {
-      "@nuka9510/js-util": "<path>/node_modules/@nuka9510/js-util/dist/index.mjs"
-        OR
-      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/index.mjs"
-        OR
-      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@latest/dist/index.mjs"
-        OR
-      "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@<specific-version>/dist/index.mjs"
-    }
+    "imports": { "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/esm/index.min.mjs" }
   }
 </script>
 ```
 ```
-<script type="module">
-  import { JUtil } from "@nuka9510/js-util";
-  const foo = "";
-
-  console.debug(JUtil.empty(foo));
+<script type="importmap">
+  {
+    "imports": { "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@latest/dist/esm/index.min.mjs" }
+  }
 </script>
+```
+```
+<script type="importmap">
+  {
+    "imports": { "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@<specific-version>/dist/esm/index.min.mjs" }
+  }
+</script>
+```
+## Usage
+### js (> 1.1.2)
+```
+const foo = "";
+
+console.debug(jsUtil.Util.empty(foo));
+```
+### mjs
+```
+import { Util } from "@nuka9510/js-util";
+const foo = "";
+
+console.debug(Util.empty(foo));
+```
+### cjs (> 1.2.0)
+```
+const jsUtil = require('@nuka9510/js-util'),
+foo = "";
+
+console.debug(jsUtil.Util.empty(foo));
 ```
 ### example
 ```
@@ -85,7 +97,7 @@ example
 ```
 * example/js/index.mjs
 ```
-import { JUtil } from "@nuka9510/js-util";
+import { Util } from "@nuka9510/js-util";
 
 class Index {
   constructor() {
@@ -102,7 +114,7 @@ class Index {
     const value = document.querySelector('[data-name="value"]'),
     result = document.querySelector('[data-name="result"]');
 
-    if (JUtil.empty(value.value)) {
+    if (Util.empty(value.value)) {
       result.innerHTML = 'true';
     } else { result.innerHTML = 'false'; }
   }
@@ -131,7 +143,7 @@ new Index();
 </body>
 <script type="importmap">
   {
-    "imports": { "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/index.mjs" }
+    "imports": { "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/esm/index.min.mjs" }
   }
 </script>
 <script type="module" src="../js/index.mjs"></script>

@@ -1,4 +1,4 @@
-import { JUtil } from "@nuka9510/js-util";
+import { Util } from "@nuka9510/js-util";
 
 class Index {
   constructor() {
@@ -15,7 +15,7 @@ class Index {
     const value = document.querySelector('[data-name="value"]'),
     result = document.querySelector('[data-name="result"]');
 
-    if (JUtil.empty(value.value)) {
+    if (Util.empty(value.value)) {
       result.innerHTML = 'true';
     } else { result.innerHTML = 'false'; }
   }

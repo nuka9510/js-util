@@ -1,3 +1,3 @@
-import Util from "./util.mjs";
+import Util from "./util.js";
 
 export { Util };

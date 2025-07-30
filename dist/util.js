@@ -1,3 +1,4 @@
+import { decode, encode } from "html-entities";
 export default class Util {
     /**
      * 값이 비어있는지 확인한다.
@@ -346,20 +347,12 @@ export default class Util {
      * html entity를 인코딩 한다.
      */
     static encodeHtmlEntity(
-    /** html entity를 인코딩 할 문자열 */ arg) {
-        const textarea = document.createElement('textarea');
-        textarea.innerText = arg;
-        return textarea.innerHTML;
-    }
+    /** html entity를 인코딩 할 문자열 */ arg) { return encode(arg); }
     /**
      * html entity를 디코딩 한다.
      */
     static decodeHtmlEntity(
-    /** html entity를 디코딩 할 문자열 */ arg) {
-        const textarea = document.createElement('textarea');
-        textarea.innerHTML = arg;
-        return textarea.innerText;
-    }
+    /** html entity를 디코딩 할 문자열 */ arg) { return decode(arg); }
     /**
      * `Object`의 `deepCopy`를 반환 한다.
      */

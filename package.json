@@ -2,10 +2,23 @@
   "name": "@nuka9510/js-util",
   "version": "1.1.6",
   "description": "nuka9510's javascript util for web front-end",
-  "main": "dist/index.mjs",
+  "type": "module",
+  "main": "./dist/cjs/index.min.cjs",
+  "module": "./dist/esm/index.min.mjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/esm/index.min.mjs",
+      "require": "./dist/cjs/index.min.cjs"
+    }
+  },
+  "files": [
+    "@types",
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -r -f dist && tsc && webpack --config webpack.config.js",
+    "build": "rm -r -f dist && tsc && webpack --config webpack.config.cjs",
     "postversion": "git push && git push --tag && npm publish --access=public"
   },
   "repository": {
@@ -13,9 +26,7 @@
     "url": "git+https://github.com/nuka9510/js-util.git"
   },
   "keywords": [
-    "web",
     "module",
-    "front-end",
     "util"
   ],
   "author": "nuka9510",
@@ -30,5 +41,8 @@
     "ts-node": "^10.9.2",
     "webpack": "^5.99.5",
     "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "html-entities": "^2.6.0"
   }
 }
