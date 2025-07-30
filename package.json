@@ -3,8 +3,6 @@
   "version": "1.2.1",
   "description": "nuka9510's javascript util for web front-end",
   "type": "module",
-  "main": "./dist/cjs/index.min.cjs",
-  "module": "./dist/esm/index.min.mjs",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
