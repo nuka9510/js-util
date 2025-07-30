@@ -14,28 +14,11 @@ module.exports = [
     },
     experiments: { outputModule: true }
   }, {
-    mode: 'production',
-    entry: './dist/index.js',
-    output: {
-      filename: 'index.min.mjs',
-      path: path.resolve(__dirname, 'dist/esm'),
-      library: { type: 'module' }
-    },
-    experiments: { outputModule: true }
-  }, {
     mode: 'development',
     devtool: 'source-map',
     entry: './dist/index.js',
     output: {
       filename: 'index.cjs',
-      path: path.resolve(__dirname, 'dist/cjs'),
-      library: { type: 'commonjs2' }
-    }
-  }, {
-    mode: 'production',
-    entry: './dist/index.js',
-    output: {
-      filename: 'index.min.cjs',
       path: path.resolve(__dirname, 'dist/cjs'),
       library: { type: 'commonjs2' }
     }
@@ -58,6 +41,23 @@ module.exports = [
         stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT
       })
     ]
+  }, {
+    mode: 'production',
+    entry: './dist/index.js',
+    output: {
+      filename: 'index.min.mjs',
+      path: path.resolve(__dirname, 'dist/esm'),
+      library: { type: 'module' }
+    },
+    experiments: { outputModule: true }
+  }, {
+    mode: 'production',
+    entry: './dist/index.js',
+    output: {
+      filename: 'index.min.cjs',
+      path: path.resolve(__dirname, 'dist/cjs'),
+      library: { type: 'commonjs2' }
+    }
   }, {
     mode: 'production',
     entry: './dist/index.js',
