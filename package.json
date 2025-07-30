@@ -26,8 +26,12 @@
     "url": "git+https://github.com/nuka9510/js-util.git"
   },
   "keywords": [
+    "util",
     "module",
-    "util"
+    "CommonJS",
+    "ES Module",
+    "cjs",
+    "esm"
   ],
   "author": "nuka9510",
   "license": "MIT",

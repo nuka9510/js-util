@@ -18,14 +18,17 @@ export default class Util {
         let result = [undefined, null, 0, ''].includes(arg);
         if (!result) {
             if (arg.constructor == Object) {
-                result = Object.keys(arg).length == 0 &&
+                return Object.keys(arg).length == 0 &&
                     Object.keys(Object.getPrototypeOf(arg)).length == 0;
             }
-            else if (arg.constructor == NodeList) {
-                result = arg.length == 0;
+            try {
+                if (arg.constructor == NodeList) {
+                    return arg.length == 0;
+                }
             }
-            else if (Array.isArray(arg)) {
-                result = arg.length == 0;
+            catch (error) { }
+            if (Array.isArray(arg)) {
+                return arg.length == 0;
             }
         }
         return result;
