@@ -1,6 +1,4 @@
-const path = require('path'),
-webpack = require('webpack'),
-jsDoc = '/** @type {import("../index.d.ts")} */';
+const path = require('path');
 
 module.exports = [
   {
@@ -33,14 +31,7 @@ module.exports = [
         name: 'jsUtil',
         type: 'var'
       }
-    },
-    plugins: [
-      new webpack.BannerPlugin({
-        banner: jsDoc,
-        raw: true,
-        stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT
-      })
-    ]
+    }
   }, {
     mode: 'production',
     entry: './dist/index.js',
@@ -68,13 +59,6 @@ module.exports = [
         name: 'jsUtil',
         type: 'var'
       }
-    },
-    plugins: [
-      new webpack.BannerPlugin({
-        banner: jsDoc,
-        raw: true,
-        stage: webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT
-      })
-    ]
+    }
   }
 ];
