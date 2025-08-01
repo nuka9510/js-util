@@ -8,6 +8,9 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/esm/index.min.mjs",
       "require": "./dist/cjs/index.min.cjs"
+    },
+    "./@types/util": {
+      "types": "./@types/util.d.ts"
     }
   },
   "files": [
