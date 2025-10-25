@@ -67,7 +67,7 @@ npm i @nuka9510/js-util
 </script>
 ```
 ## Usage
-### js (> 1.1.2)
+### js
 ```
 const foo = "";
 
@@ -80,7 +80,7 @@ const foo = "";
 
 console.debug(Util.empty(foo));
 ```
-### cjs (> 1.2.0)
+### cjs
 ```
 const jsUtil = require('@nuka9510/js-util'),
 foo = "";
