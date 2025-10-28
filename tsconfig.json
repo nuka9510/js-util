@@ -10,7 +10,12 @@
     "target": "ESNext",
     "declaration": true,
     "declarationDir": "dist",
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "@nuka9510/js-util": ["src/index.ts"],
+      "@nuka9510/js-util/@types/util": ["@types/util.d.ts"]
+    }
   },
   "include": [
     "src/index.ts"

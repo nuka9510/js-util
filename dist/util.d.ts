@@ -1,4 +1,4 @@
-import { dateInterval } from "../@types/util";
+import { dateInterval } from "@nuka9510/js-util/@types/util";
 export default class Util {
     /**
      * 값이 비어있는지 확인한다.

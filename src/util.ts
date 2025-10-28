@@ -1,4 +1,4 @@
-import { dateInterval } from "../@types/util";
+import { dateInterval } from "@nuka9510/js-util/@types/util";
 import { decode, encode } from "html-entities";
 
 export default class Util {
