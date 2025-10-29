@@ -39,7 +39,7 @@
   "bugs": {
     "url": "https://github.com/nuka9510/js-util/issues"
   },
-  "homepage": "https://github.com/nuka9510/js-util",
+  "homepage": "https://github.com/nuka9510/js-util/wiki",
   "devDependencies": {
     "@types/node": "^22.14.0",
     "@types/webpack": "^5.28.5",

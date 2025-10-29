@@ -375,7 +375,7 @@ class Util {
      * `Object`의 `deepCopy`를 반환 한다.
      */
     static copy(
-    /** `deepCopy`할 `object` */ arg) {
+    /** `deepCopy`할 `Object` */ arg) {
         if (Util.isObject(arg)) {
             const result = {};
             for (const i in arg) {
@@ -395,7 +395,7 @@ class Util {
         }
     }
     /**
-     * `sNum` <= x <= `eNum` 범위의 배열을 반환한다.
+     * `sNum` <= `x` <= `eNum` 범위의 배열을 반환한다.
      */
     static numRange(
     /** 시작 값 */ sNum, 

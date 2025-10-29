@@ -435,7 +435,7 @@ export default class Util {
    * `Object`의 `deepCopy`를 반환 한다.
    */
   static copy<T extends Object>(
-    /** `deepCopy`할 `object` */ arg?: T | null
+    /** `deepCopy`할 `Object` */ arg?: T | null
   ): T {
     if (Util.isObject(arg)) {
       const result = {} as any;
@@ -453,7 +453,7 @@ export default class Util {
   }
 
   /**
-   * `sNum` <= x <= `eNum` 범위의 배열을 반환한다.
+   * `sNum` <= `x` <= `eNum` 범위의 배열을 반환한다.
    */
   static numRange(
     /** 시작 값 */ sNum: number,
