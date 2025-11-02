@@ -76,7 +76,7 @@ npm i @nuka9510/js-util
 
 ## Usage
 
-### js
+- js
 
 ```js
 const foo = "";
@@ -84,7 +84,7 @@ const foo = "";
 console.debug(jsUtil.Util.empty(foo));
 ```
 
-### mjs
+- mjs
 
 ```js
 import { Util } from "@nuka9510/js-util";
@@ -94,7 +94,7 @@ const foo = "";
 console.debug(Util.empty(foo));
 ```
 
-### cjs
+- cjs
 
 ```js
 const jsUtil = require('@nuka9510/js-util'),
