@@ -1,6 +1,6 @@
 {
   "name": "@nuka9510/js-util",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "nuka9510's javascript util",
   "type": "module",
   "exports": {
