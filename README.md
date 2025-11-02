@@ -33,119 +33,72 @@
 [top-language]: https://img.shields.io/github/languages/top/nuka9510/js-util
 
 ## Install
-```
+
+```shell
 npm i @nuka9510/js-util
 ```
-```
+
+```html
 <script src="https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/js/index.min.js"> </script>
 ```
-```
+
+```html
 <script src="https://cdn.jsdelivr.net/npm/@nuka9510/js-util@latest/dist/js/index.min.js"> </script>
 ```
-```
+
+```html
 <script src="https://cdn.jsdelivr.net/npm/@nuka9510/js-util@<specific-version>/dist/js/index.min.js"> </script>
 ```
-```
+
+```html
 <script type="importmap">
   {
     "imports": { "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/esm/index.min.mjs" }
   }
 </script>
 ```
-```
+
+```html
 <script type="importmap">
   {
     "imports": { "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@latest/dist/esm/index.min.mjs" }
   }
 </script>
 ```
-```
+
+```html
 <script type="importmap">
   {
     "imports": { "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util@<specific-version>/dist/esm/index.min.mjs" }
   }
 </script>
 ```
+
 ## Usage
+
 ### js
-```
+
+```js
 const foo = "";
 
 console.debug(jsUtil.Util.empty(foo));
 ```
+
 ### mjs
-```
+
+```js
 import { Util } from "@nuka9510/js-util";
+
 const foo = "";
 
 console.debug(Util.empty(foo));
 ```
+
 ### cjs
-```
+
+```js
 const jsUtil = require('@nuka9510/js-util'),
 foo = "";
 
 console.debug(jsUtil.Util.empty(foo));
-```
-### example
-```
-example
-├── js
-│  └── index.mjs
-└── view
-   └── index.html
-```
-* example/js/index.mjs
-```
-import { Util } from "@nuka9510/js-util";
-
-class Index {
-  constructor() {
-    this.onValueEmptyCheckClick = this.onValueEmptyCheckClick.bind(this);
-
-    this.init();
-  }
-
-  init() {
-    document.querySelectorAll('[data-action="value-empty-check-click"]').forEach((...arg) => { arg[0].addEventListener('click', this.onValueEmptyCheckClick); });
-  }
-
-  onValueEmptyCheckClick(ev) {
-    const value = document.querySelector('[data-name="value"]'),
-    result = document.querySelector('[data-name="result"]');
-
-    if (Util.empty(value.value)) {
-      result.innerHTML = 'true';
-    } else { result.innerHTML = 'false'; }
-  }
-
-}
-
-new Index();
-```
-* example/view/index.html
-```
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <div data-name="result"></div>
-  <div style="display: flex; flex-direction: column;">
-    <input type="text" data-name="value">
-    <div style="display: flex;">
-      <button data-action="value-empty-check-click">value-empty</button>
-    </div>
-  </div>
-</body>
-<script type="importmap">
-  {
-    "imports": { "@nuka9510/js-util": "https://cdn.jsdelivr.net/npm/@nuka9510/js-util/dist/esm/index.min.mjs" }
-  }
-</script>
-<script type="module" src="../js/index.mjs"></script>
-</html>
 ```
