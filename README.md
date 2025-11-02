@@ -79,26 +79,19 @@ npm i @nuka9510/js-util
 - js
 
 ```js
-const foo = "";
-
-console.debug(jsUtil.Util.empty(foo));
+jsUtil.Util;
 ```
 
 - mjs
 
 ```js
 import { Util } from "@nuka9510/js-util";
-
-const foo = "";
-
-console.debug(Util.empty(foo));
 ```
 
 - cjs
 
 ```js
 const jsUtil = require('@nuka9510/js-util'),
-foo = "";
 
-console.debug(jsUtil.Util.empty(foo));
+jsUtil.Util;
 ```
